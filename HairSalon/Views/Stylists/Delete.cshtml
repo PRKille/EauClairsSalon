@@ -1,0 +1,17 @@
+@{Layout = "_Layout";}
+
+@model HairSalon.Models.Stylist
+
+<h2>Are you sure you want to fire @Html.DisplayFor(model => model.Name)?</h2>
+
+@if(model.Clients.Count > 0)
+{
+  <h1 class="warning">Please reassign all clients or they will be deleted!</h1>
+  <p>@Html.ActionLink($"{model.Name}", "Details", new {id = model.StylistId})</p>
+}
+
+@Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
