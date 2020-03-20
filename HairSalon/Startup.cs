@@ -44,7 +44,7 @@ namespace HairSalon
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Wha-oh speghettio!");
+        await context.Response.WriteAsync("You seem to have lost your way!");
       });
       app.UseStaticFiles();
     }

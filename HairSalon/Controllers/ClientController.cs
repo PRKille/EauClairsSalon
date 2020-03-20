@@ -19,7 +19,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Client> allClients = _db.Clients.Include(client => client.Category).ToList();
+      List<Client> allClients = _db.Clients.Include(client => client.Stylist).ToList();
       return View(allClients);
     }
 
