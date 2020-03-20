@@ -70,6 +70,8 @@ namespace HairSalon.Controllers
       try
       {
         Client currentClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+        Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == currentClient.StylistId);
+        ViewBag.stylist = thisStylist;
         return View(currentClient);
       }
       catch
