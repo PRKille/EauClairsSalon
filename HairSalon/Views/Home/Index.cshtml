@@ -1,7 +1,10 @@
 @{Layout = "_Layout";}
-
-<h1>Welcome Clair!</h1>
-<h3>Where would you like to go?</h3>
-<p>@Html.ActionLink("View your Stylists", "Index", "Stylist", null, new {@class = "btn btn-secondary btn-sm"})</p>
-<p>@Html.ActionLink("Add a New Stylists", "Create", "Stylist", null, new {@class = "btn btn-secondary btn-sm"})</p>
-<p>@Html.ActionLink("View all your Clients", "Index", "Client", null, new {@class = "btn btn-secondary btn-sm"})</p>
+<div class="jumbotron">
+  <h1>Welcome Claire!</h1>
+</div>
+<div>  
+  <h3>Where would you like to go?</h3>
+  <p>@Html.ActionLink("View your Stylists", "Index", "Stylist", null, new {@class = "btn btn-secondary btn-sm"})</p>
+  <p>@Html.ActionLink("Add a New Stylists", "Create", "Stylist", null, new {@class = "btn btn-secondary btn-sm"})</p>
+  <p>@Html.ActionLink("View all your Clients", "Index", "Client", null, new {@class = "btn btn-secondary btn-sm"})</p>
+</div>
