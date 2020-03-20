@@ -1,5 +1,5 @@
 @{Layout = "_Layout";}
-
+@using HairSalon.Models
 @model HairSalon.Models.Stylist
 
 <h2>Are you sure you want to fire @Html.DisplayFor(model => model.Name)?</h2>
@@ -7,10 +7,13 @@
 @if(Model.Clients.Count > 0)
 {
   <h1 class="warning">Please reassign all clients or they will be deleted!</h1>
-  <p>@Html.ActionLink($"{Model.Name}", "Details", new {id = Model.StylistId})</p>
+
+  @foreach(Client client in Model.Clients)
+  {
+    <p>@Html.ActionLink($"{client.Name}", "Details", "Client", new {id = client.ClientId}, new {@class = "btn btn-secondary btn-sm"})</p>
+  }
 }
 
-@Html.DisplayFor(model => model.Name)
 @using (Html.BeginForm())
 {
   <input type="submit" value="Delete" />

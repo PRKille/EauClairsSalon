@@ -95,6 +95,7 @@ namespace HairSalon.Controllers
       try
       {
         Stylist stylistToDelete = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+        stylistToDelete.Clients = _db.Clients.Where(client => client.StylistId == id).ToList();
         return View(stylistToDelete);
       }
       catch
