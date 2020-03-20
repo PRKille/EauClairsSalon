@@ -7,7 +7,7 @@
 
 @if(Model.Clients.Count == 0)
 {
-  <p>@Html.DisplayFor(model => model.Name) needs to hustle and @Html.ActionLink("add a client.", "Create", "Client")</p>
+  <p>@Html.DisplayFor(model => model.Name) needs to hustle and get some clients.</p>
 }
 
 @foreach (Client client in Model.Clients)
