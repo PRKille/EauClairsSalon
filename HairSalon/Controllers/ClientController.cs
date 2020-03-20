@@ -17,6 +17,12 @@ namespace HairSalon.Controllers
       _db = db;
     }
 
+    public ActionResult Index()
+    {
+      List<Client> allClients = _db.Clients.Include(client => client.Category).ToList();
+      return View(allClients);
+    }
+
     public ActionResult Create(int id)
     {
       try
