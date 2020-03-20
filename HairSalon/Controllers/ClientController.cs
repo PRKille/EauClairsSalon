@@ -57,6 +57,7 @@ namespace HairSalon.Controllers
       try
       {
         Client currentClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+        currentClient.Stylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == currentClient.StylistId);
         return View(currentClient);
       }
       catch
@@ -70,8 +71,7 @@ namespace HairSalon.Controllers
       try
       {
         Client currentClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-        Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == currentClient.StylistId);
-        ViewBag.stylist = thisStylist;
+        ViewBag.AllStylists = new SelectList(_db.Stylists, "StylistId", "Name");
         return View(currentClient);
       }
       catch
