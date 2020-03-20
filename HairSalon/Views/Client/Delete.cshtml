@@ -1,0 +1,12 @@
+@{Layout="_Layout";}
+
+@model HairSalon.Models.Client
+
+<h1>Are you sure you want to remove @Html.DisplayFor(model => model.Name) from your books?</h1>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Erase"/>
+}
+
+@Html.ActionLink("Back to client details", "Details", new {id = Model.ClientId}, new { @class = "btn btn-dark btn-large" });
