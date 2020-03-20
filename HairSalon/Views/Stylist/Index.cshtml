@@ -10,11 +10,10 @@
   <h3>@Html.ActionLink("Please Add a Stylist", "Create")</h3>
 }
 
-<ul>
   @foreach (Stylist stylist in Model)
   {
-    <li>@Html.ActionLink($"{stylist.Name}", "Details", new {id = stylist.StylistId})</li>
+    <p>@Html.ActionLink($"{stylist.Name}", "Details", new {id = stylist.StylistId}, new {@class = "btn btn-secondary btn-sm"})</p>
   }
-</ul>
+
 <hr>
 <p>@Html.ActionLink("New Stylist", "Create", null, null, new { @class = "btn btn-dark btn-large" })</p>
