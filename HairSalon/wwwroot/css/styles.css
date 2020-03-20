@@ -18,9 +18,15 @@ div#footer {
 
 nav {
   background-color: lightseagreen;
-  border-bottom: groove;
+  box-shadow: inset 0px -2px 3px #555555;
 }
 
+.jumbotron {
+  background-color: rgba(32, 178, 171, 0.548);
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 4px 5px#9ec6a5a6;
+}
 .warning {
   color: crimson;
 }
