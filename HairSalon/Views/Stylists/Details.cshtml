@@ -12,9 +12,9 @@
 
 @foreach (Client client in Model.Clients)
 {
-  <p>@Html.ActionLink($"{client.Name}", "Details", "Client", new {id = client.ClientId }, new {@class = "btn btn-secondary btn-sm"})</p>
+  <p>@Html.ActionLink($"{client.Name}", "Details", "Clients", new {id = client.ClientId }, new {@class = "btn btn-secondary btn-sm"})</p>
 }
 
-<p>@Html.ActionLink("New Client", "Create", "Client", new {id = Model.StylistId }, new { @class = "btn btn-dark btn-large" })</p> 
+<p>@Html.ActionLink("New Client", "Create", "Clients", new {id = Model.StylistId }, new { @class = "btn btn-dark btn-large" })</p> 
 <p>@Html.ActionLink("Edit this Stylist", "Edit", new { id = Model.StylistId }, new { @class = "btn btn-dark btn-large" } )</p>
 <p>@Html.ActionLink("Delete this Stylist", "Delete", new { id = Model.StylistId }, new { @class = "btn btn-dark btn-large" } )</p>

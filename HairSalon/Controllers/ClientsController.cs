@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HairSalon.Controllers
 {
-  public class ClientController : Controller
+  public class ClientsController : Controller
   {
     private readonly HairSalonContext _db;
 
-    public ClientController(HairSalonContext db)
+    public ClientsController(HairSalonContext db)
     {
       _db = db;
     }
@@ -44,11 +44,11 @@ namespace HairSalon.Controllers
       {
         _db.Clients.Add(client);
         _db.SaveChanges();      
-        return RedirectToAction("Details", "Stylist", new {id = client.StylistId});
+        return RedirectToAction("Details", "Stylists", new {id = client.StylistId});
       }
       catch
       {
-        return RedirectToAction("Index", "Stylist");
+        return RedirectToAction("Index", "Stylists");
       }
     }
 
@@ -62,7 +62,7 @@ namespace HairSalon.Controllers
       }
       catch
       {
-        return RedirectToAction("Index", "Stylist");
+        return RedirectToAction("Index", "Stylists");
       }
     }
 
@@ -76,7 +76,7 @@ namespace HairSalon.Controllers
       }
       catch
       {
-        return RedirectToAction("Index", "Stylist");
+        return RedirectToAction("Index", "Stylists");
       }
     }
 
@@ -91,7 +91,7 @@ namespace HairSalon.Controllers
       }
       catch
       {
-        return RedirectToAction("Index", "Stylist");
+        return RedirectToAction("Index", "Stylists");
       }
     }
 
@@ -104,7 +104,7 @@ namespace HairSalon.Controllers
       }
       catch
       {
-        return RedirectToAction("Index", "Stylist");
+        return RedirectToAction("Index", "Stylists");
       }
     }
 
@@ -116,11 +116,11 @@ namespace HairSalon.Controllers
         Client currentClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
         _db.Clients.Remove(currentClient);
         _db.SaveChanges();
-        return RedirectToAction("Details", "Stylist", new {id = currentClient.StylistId});
+        return RedirectToAction("Details", "Stylists", new {id = currentClient.StylistId});
       }
       catch
       {
-        return RedirectToAction("Index", "Stylist");
+        return RedirectToAction("Index", "Stylists");
       }
     }
   }
